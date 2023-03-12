@@ -1,0 +1,149 @@
+/*chỉnh body khung của web*/
+body {
+	margin: 0;
+}
+
+/*chỉnh  tiêu đề*/
+#title {
+	text-align: center;
+	background-color: #ffff99;
+	padding: 5%;
+	margin: 0px;
+}
+
+/*chỉnh menu*/
+nav {
+	background-color: black;
+	/*padding: 14px 20px;*/
+	overflow: hidden;
+}
+nav a {
+	padding: 14px 20px;
+	text-decoration: none;
+	display: block;
+	color: white;
+}
+/*hover: chỉnh hiệu ứng*/
+nav a:hover {
+	background-color: white;
+	color: black;
+}
+
+.adjustMenuLeft {
+	float: left;/*float là trôi cả khung block còn, text-align là chỉ trôi nội dung trong nó*/
+}
+.adjustMenuRight {
+	float: right;
+}
+
+/*flexbox: chia bố cục*/
+#container {
+	display: flex;
+	flex-wrap: nowrap;
+}
+#containerLeft {
+	flex: 28%;
+	background-color: lightgrey;
+	padding: 1%;
+	/*giải thích wrap-responsive: ở đây tức là khi wrap = 100% 2 mục 96% 2 padding 1% * 4 cạnh bên (mỗi mục 2 cạnh bên 1% * 2) = 4% -> đủ 100% 
+	vì 1% -> trên phải dươi trái 4% phải trái mỗi cái 1% * 2 = 2% mỗi mục riêng phần padding 1% đã chiếm 2% width của trang wed*/
+	margin: 0;
+}
+#containerRight {
+	flex: 68%;
+	padding: 1%;
+	/*giải thích sự ảnh hưởng kích thước khi tính toán: padding nó sẽ vẫn giữ kích thước của phần tử nhưng còn phần padding được mở rộng riêng ra 
+	-> kích thước của phần tử + padding -> gộp phần tử đó lại kích  sẽ tăng*/
+	margin: 0;
+}
+
+/*chỉnh tiêu đề phần bên phải trang*/
+.inforMajor {
+	font-size: 150%;
+	font-weight: bold;
+	padding:  10px 10px 5px 10px;
+}
+
+.description {
+	margin: 0px 10px 20px 10px;
+}
+
+.picture_1 {
+	width: 90%;
+	/*height: 60%;*/
+}
+
+#containerItem {
+	display: flex;
+	flex-wrap: 	wrap;
+}
+
+.item {
+	text-align: center;
+	flex: 33%;
+}
+
+/*responsive flex box lưu ý: khi code thì max-width > hơn phải để phía trên vì code chạy từ trên xuống 
+ví dụ nếu code thêm cho đt thì nên để max-width: 400px ở dưới thì nó mới hoạt động đc*/
+@media only screen and (max-width: 800px) {
+	/*chỉnh bố cục phần bên phải và bên trái của trang web*/
+	#containerLeft {
+		flex: 98%;
+	}
+	#containerRight {
+		flex: 98%;
+	}
+
+	#container {
+		flex-wrap: wrap;
+	}
+
+	/*chỉnh bố cục các mục trong phần bọc của phần bên phải*/
+	.item {
+		flex: 50%;
+	}
+}
+
+/*tạo kiểu chữ cho các tiêu đề <h2>*/
+.adjustItem {
+		font-family: cursive;
+	}
+	
+/*chỉnh bảng*/	
+table {
+	width: 90%;
+	border-collapse: collapse;
+}
+tr:nth-child(even){
+	background-color: lightgrey;
+}
+td, th {
+	border: solid;/*tạo khung cho mỗi ô và mặc định nó sẽ có khoảng trắng viền giữa hai ô nên dùng collapse ở trên đề mất nó*/
+	text-align: left;
+	padding: 1%;
+}
+th.colspan {
+	column-span:2;
+}
+
+/*chỉnh horizontally*/
+
+/*chỉnh ảnh*/
+img.picture {
+	width: 150px;
+	height: 150px;
+}
+
+/*chỉnh footer*/
+footer {
+	margin: 10px;
+	padding: 10px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	margin: 0;
+}
+footer > a {
+	text-decoration: none;
+	color: white;
+}
